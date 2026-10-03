@@ -1,0 +1,51 @@
+@use 'mixins' as *;
+
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.status {
+  @include font-body(var(--font-size-sm), 600);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-secondary);
+
+  &::before {
+    content: '';
+    width: var(--space-2);
+    height: var(--space-2);
+    background: var(--color-border);
+    border-radius: 50%;
+  }
+
+  &._running::before {
+    background: var(--color-accent);
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+
+  &._paused::before {
+    background: var(--color-text-primary);
+  }
+}
+
+.time {
+  @include font-timer;
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.tenths {
+  font-size: 0.45em;
+  color: var(--color-text-secondary);
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,36 @@
+@use './root';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100svh;
+  margin: 0;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body);
+  background: radial-gradient(circle at 20% 0%, var(--color-forest-800), var(--color-bg) 60%) fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

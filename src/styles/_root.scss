@@ -1,0 +1,57 @@
+@use './mixins' as *;
+
+:root {
+  --color-forest-950: #051f20;
+  --color-forest-900: #0b2b26;
+  --color-forest-800: #163832;
+  --color-forest-700: #235347;
+  --color-sage-400: #8eb69b;
+  --color-mint-100: #daf1de;
+  --color-danger: #e8a3a3;
+
+  --color-bg: var(--color-forest-950);
+  --color-surface: var(--color-forest-900);
+  --color-surface-raised: var(--color-forest-800);
+  --color-border: var(--color-forest-700);
+  --color-text-primary: var(--color-mint-100);
+  --color-text-secondary: var(--color-sage-400);
+  --color-accent: var(--color-sage-400);
+  --color-accent-hover: var(--color-mint-100);
+  --color-accent-active: color-mix(in srgb, var(--color-sage-400) 80%, var(--color-forest-950));
+  --color-accent-contrast: var(--color-forest-950);
+
+  --font-family-display: 'Cormorant Garamond', Georgia, serif;
+  --font-family-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-2xl: 28px;
+  --font-size-3xl: 44px;
+  --font-size-timer: 96px;
+
+  --space-half: 2px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --control-height: 48px;
+  --icon-size-md: 20px;
+  --icon-size-lg: 32px;
+  --layout-max-width: 640px;
+  --radius-md: 12px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  --shadow-panel: 0 24px 48px -24px rgb(0 0 0 / 60%), inset 0 1px 0 rgb(218 241 222 / 6%);
+  --transition-fast: 150ms ease;
+
+  @include respond-to($breakpoint-mobile) {
+    --font-size-timer: 56px;
+    --font-size-3xl: 36px;
+  }
+}

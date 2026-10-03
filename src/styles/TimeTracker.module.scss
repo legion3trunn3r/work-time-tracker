@@ -1,0 +1,30 @@
+@use 'mixins' as *;
+
+.time-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-8);
+  background: linear-gradient(180deg, var(--color-surface-raised), var(--color-surface));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-panel);
+
+  @include respond-to($breakpoint-mobile) {
+    gap: var(--space-6);
+    padding: var(--space-5);
+  }
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
