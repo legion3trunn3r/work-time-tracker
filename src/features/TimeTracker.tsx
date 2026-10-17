@@ -17,7 +17,7 @@ export const TimeTracker = () => {
   const [taskName, setTaskName] = useState('')
   const [taskNameError, setTaskNameError] = useState<string | null>(null)
   const { status, elapsedMs, start, pause, stop } = useStopwatch()
-  const { entries, totalDurationMs, addEntry, removeEntry } = useTimeEntries()
+  const { entries, totalDurationMs, addEntry, updateEntry, removeEntry } = useTimeEntries()
 
   const isIdle = status === StopwatchStatus.Idle
   const isRunning = status === StopwatchStatus.Running
@@ -88,7 +88,12 @@ export const TimeTracker = () => {
           )}
         </div>
       </form>
-      <TimeEntryList entries={entries} totalDurationMs={totalDurationMs} onRemoveEntry={removeEntry} />
+        <TimeEntryList
+            entries={entries}
+            totalDurationMs={totalDurationMs}
+            onUpdateEntry={updateEntry}
+            onRemoveEntry={removeEntry}
+        />
     </div>
   )
 }

@@ -6,3 +6,5 @@ export interface TimeEntry {
 }
 
 export type NewTimeEntry = Omit<TimeEntry, 'id'>
+
+export type TimeEntryUpdate = Pick<TimeEntry, 'taskName' | 'durationMs'>

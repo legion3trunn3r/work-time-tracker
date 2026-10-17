@@ -19,3 +19,9 @@ export const STOPWATCH_STATUS_LABELS: Record<StopwatchStatus, string> = {
   [StopwatchStatus.Running]: 'Идёт отсчёт',
   [StopwatchStatus.Paused]: 'На паузе',
 }
+
+export const DURATION_INPUT_PATTERN = /^(\d{1,3}):([0-5]?\d):([0-5]?\d)$/
+export const DURATION_INPUT_PLACEHOLDER = '00:00:00'
+export const DURATION_INPUT_MAX_LENGTH = 9
+export const DURATION_INVALID_MESSAGE = 'Введите время в формате ЧЧ:ММ:СС, не меньше 00:00:01'
+export const ESCAPE_KEY = 'Escape'
